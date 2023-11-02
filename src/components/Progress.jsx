@@ -1,15 +1,17 @@
-function Progress(props) {
+import { useState } from "react";
+function Progress() {
+  const [width, setWidth] = useState(40);
   return (
     <div>
       <input
         type="number"
-        value={props.width}
+        value={width}
         onChange={(e) => {
-          props.setWidth(e.target.value);
+          setWidth(e.target.value);
         }}
       />
       <div className="outer">
-        <div className="inner" style={{ width: `${props.width}%` }}></div>
+        <div className="inner" style={{ width: `${width}%` }}></div>
       </div>
     </div>
   );
